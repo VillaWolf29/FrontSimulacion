@@ -1,16 +1,48 @@
-# React + Vite
+```markdown
+# MS4M - Visualizador de Simulación (Frontend)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Autor:** Juan Alberto Villalobos Melendez (@VillaWolf29)
 
-Currently, two official plugins are available:
+Este repositorio contiene la interfaz de usuario desarrollada en **React + Vite** y **Leaflet** para la evaluación técnica de MS4M. Permite visualizar la red vial, iniciar la simulación y observar el recorrido de los camiones en tiempo real.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🔗 Enlaces Importantes
+* **Despliegue (Vercel):** https://[tu-proyecto-en-vercel].vercel.app
+* **Repositorio GitHub Backend:** https://github.com/VillaWolf29/BackSimulacion
 
-## React Compiler
+## 🚀 Instrucciones de Ejecución Local
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+1. Asegúrate de tener **Node.js** instalado.
+2. Clona este repositorio y abre una terminal en la carpeta raíz (`FrontSimulacion`).
+3. Instala las dependencias:
+   ```bash
+   npm install
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+1. Levanta el servidor de desarrollo:
+   
+   Bash
+   npm run dev
+
+2. Nota Importante: Este frontend consume la API en http://localhost:8081. Asegúrate de tener el backend de Spring Boot ejecutándose en ese puerto antes de iniciar la simulación.
+
+Respuestas a la Evaluación
+Frontend y Visualización
+Se utilizó React estructurado en componentes funcionales junto con react-leaflet para la renderización del mapa. Se implementó una jerarquía visual clara: polilíneas para las rutas (respetando sus colores originales), y marcadores diferenciados para zonas de carga (verde), descarga (rojo) y camiones (amarillo), acompañados de una leyenda flotante.
+Alternativas: Se evaluó utilizar MapLibre GL JS o Google Maps API.
+Mejor opción con más tiempo: Si tuviera más tiempo, separaría el código en múltiples sub-componentes modulares (ej. ControlPanel, MapLegend, ReportTable) en lugar de centralizarlo. Además, agregaría animaciones fluidas con CSS puro para el movimiento de los camiones entre los intervalos de polling para suavizar la transición visual, y utilizaría MapLibre por su mejor rendimiento al renderizar vectores mediante WebGL.
+
+```text
+Estimado equipo de evaluación de MS4M,
+
+Adjunto los enlaces y la información correspondiente a la solución desarrollada para la Evaluación de Conocimientos - Ingeniero de Desarrollo de Software (GTH-FOR-03).
+
+1. URL del Repositorio Git: https://github.com/VillaWolf29/BackSimulacion (Backend) y https://github.com/VillaWolf29/FrontSimulacion (Frontend)
+2. URL pública del Frontend en Vercel: https://[tu-proyecto-en-vercel].vercel.app
+3. URL del Backend: Se adjuntan instrucciones para ejecución local en http://localhost:8081 
+4. Instrucciones de ejecución local: Detalladas paso a paso en el archivo README.md de cada repositorio.
+5. Documentación de API y decisiones técnicas:
+   - Contrato OpenAPI/Swagger: http://localhost:8081/swagger-ui/index.html
+   - Explicación de arquitectura, algoritmos (Dijkstra, Polling, Interpolación) y respuestas a las 5 preguntas del alcance funcional incluidas en los README.md.
+
+Atentamente,
+Juan Alberto Villalobos Melendez
